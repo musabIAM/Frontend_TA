@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/assets/agridrone-logo.jpg" />
+    <title>Dashboard | Agri-Drone</title>
+    <link rel="stylesheet" href="/style/clonews.css" />
+    <!-- Font Awesome Cdn Link -->
+    <script
+      src="https://kit.fontawesome.com/ff4f981f32.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul id="myList">
+          <li>
+            <a href="#" class="logo">
+              <img src="/assets/agridrone-logo.jpg" alt="" />
+              <span class="nav-item">DashBoard</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="/dashboard/soil.html"
+              onclick="toggleActiveClass(this)"
+            >
+              <i class="fas fa-solid fa-leaf"></i>
+              <span class="nav-item">Soil</span>
+            </a>
+          </li>
+          <li>
+            <a href="/dashboard/weather.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-cloud-sun"></i>
+              <span class="nav-item">Weather</span>
+            </a>
+          </li>
+          <li>
+            <a href="" onclick="toggleActiveClass(this)">
+              <i class="fas fa-users"></i>
+              <span class="nav-item">History</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-top">
+          <h1>7 Days Forecast</h1>
+          <i class="fas fa-calendar-days"
+            ><h3 class="date" id="date">dd/mm/yyyy</h3></i
+          >
+        </div>
+        <div class="main-weather">
+          <div class="card_left">
+            <div class="card_detail">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="dayOfWeek"></h3>
+                  <!-- <p id="windDataS">Wind Speed:__m/s</p>
+                  <p id="windDataD">Wind Direction:__</p>
+                  <p id="tempData">Temperature:__°C</p>
+                  <p id="rainfData">Rainfall:__mm</p> -->
+               
+                  <div id="winds"></div>
+                  
+
+                </div>
+                <div class="info_time">
+                  <h3 class="realtime">01.00 WIB</h3>
+                  <div id="weather_now"></div>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+          </div>
+
+          <div class="card_right">
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay1"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay2">Monday</h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay3"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay4"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay5"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+
+            <div class="card">
+              <div class="content_data">
+                <div class="info_data">
+                  <h3 id="nextDay6"></h3>
+                </div>
+                <div class="info_time">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              <button>View All</button>
+            </div>
+          </div>
+        </div>
+
+        <section class="main-course">
+          <h1>Overviews</h1>
+          <div class="course-box">
+            <ul id="infoList">
+              <!-- <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li> -->
+              <li id="windSpeed" onclick="showInfo('windSpeed')">Wind Speed</li>
+              <li id="temperature" onclick="showInfo('temperature')">
+                Temperature
+              </li>
+              <li id="rainfall" onclick="showInfo('rainfall')">Rainfall</li>
+            </ul>
+            <div class="course">
+              <div class="box_left" id="infoBox">
+                <div class="box_data">
+                  <div class="info">
+                    <h3>Node Info</h3>
+                    <p>
+                      <i class="fa-solid fa-temperature-quarter" id="icon"></i>
+                      <span id="infoValue">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                  <button>View All</button>
+                </div>
+              </div>
+              <div class="box_right">
+                  <div class="box" style="width: 600px;">
+                    <h3>Chart Info</h3>
+                    <div class="chart-wrapper">
+                      <!-- <canvas
+                        id="myChart"
+                        style="width: 100%; max-width: 600px"
+                      ></canvas> -->
+                    </div>
+                    <!-- <button>View All</button> -->
+                  </div>
+
+                <div class="box">
+                  <h3>Emoji Info</h3>
+                  <div class="box_emoji">
+                    <div class="emoji_mad">
+                      <i class="fa-regular fa-face-tired"></i>
+                      <p id="emoji-data1">__</p>
+                    </div>
+                    <div class="emoji_smile">
+                      <i class="fa-regular fa-face-smile"></i>
+                      <p id="emoji-data2">__</p>
+                    </div>
+                    <div class="emoji_sad">
+                      <i class="fa-regular fa-face-sad-cry"></i>
+                      <p id="emoji-data3">__</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="/js/clonews.js"></script>
+    <!-- <script src="/js/chartjs/rainfallchart.js"></script> -->
+    <!-- <script src="/js/chartjs/tempchart.js"></script> -->
+    <!-- <script src="/js/chartjs/winddirectionchart.js"></script> -->
+    <!-- <script src="/js/chartjs/windspeedchart.js"></script> -->
+    <script src="/js/function/clock.js"></script>
+    <script src="/js/function/date.js"></script>
+    <script src="/js/function/day.js"></script>
+    <script src="/js/function/emoji.js"></script>
+  </body>
+</html>

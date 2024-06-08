@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/assets/agridrone-logo.jpg" />
+    <title>Dashboard | Agri-Drone</title>
+    <link rel="stylesheet" href="/style/map_ta.css" />
+    <link rel="stylesheet" href="/style/leaflet.css" />
+    <!-- Font Awesome Cdn Link -->
+    <script
+      src="https://kit.fontawesome.com/ff4f981f32.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul id="myList">
+          <li>
+            <a href="#" class="logo">
+              <img src="/assets/agridrone-logo.jpg" alt="" />
+              <span class="nav-item">DashBoard</span>
+            </a>
+          </li>
+          <li>
+            <a href="/dashboard/soil.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-leaf"></i>
+              <span class="nav-item">Soil</span>
+            </a>
+          </li>
+          <li>
+            <a href="/dashboard/weather.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-cloud-sun"></i>
+              <span class="nav-item">Weather</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-top">
+          <h1>Map of Padaasih Village</h1>
+          <i class="fas fa-calendar-days"
+            ><h3 class="date" id="date">dd/mm/yyyy</h3></i
+          >
+        </div>
+        <section class="main-course">
+          <div class="course-box">
+            <div class="position">
+              <div>
+                <div class="box">
+                  <h3>Fertility Mapping Results</h3>
+                  <div class="mapbox">
+                    <div class="mapsize" id="map"></div>
+                    <button onclick="move()">Back Dashboard</button>
+                    <script>
+                      function move(){
+                        window.location.href = "soil.html"
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="/js/stmaufix.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <!-- <script>var map = L.map("map").setView([-6.8245, 107.5615], 18);
+
+        // OSM layer
+        var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        });
+        osm.addTo(map);
+        
+        // map satelit
+        var googleSat = L.tileLayer("http://{s}.google.com/vt?lyrs=s&x={x}&y={y}&z={z}", {
+          maxZoom: 20,
+          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        });
+        googleSat.addTo(map);
+        
+        var myStyle = {
+          color: "#ff0000",
+          weight: 4,
+          opacity: 1,
+        };
+        
+        // GeoJSON
+        L.geoJSON(mapgeoJSON, {
+          style: myStyle,
+        }).addTo(map);
+        
+        // Data contoh
+        var alat1 = {
+          LAT: -6.82435,
+          LONG: 107.5615,
+          n: 150, 
+          p: 55,
+          k: 50,
+          ph: 6,
+          moisture: 20
+        };
+        
+        var alat2 = {
+          LAT: -6.82442,
+          LONG: 107.56175,
+          n: 250,
+          p: 55,
+          k: 50,
+          ph: 6,
+          moisture: 20,
+        };
+        
+        var alat3 = {
+          LAT: -6.82472,
+          LONG: 107.5615,
+          n: 200,
+          p: 55,
+          k: 50,
+          ph: 6,
+          moisture: 20,
+        };
+        
+        // Tambahkan marker untuk setiap titik
+        var tambahkanMarker = function(data) {
+          // Tentukan warna ikon berdasarkan nilai n
+          var iconColor;
+          if (data.n <= 150) {
+            iconColor = "red";
+          } else if (data.n >150 && data.n <= 200) {
+            iconColor = "yellow";
+          } else {
+            iconColor = "green";
+          }
+        
+          L.marker([data.LAT, data.LONG], {
+            icon: L.divIcon({
+              className: "custom-icon " + iconColor,
+              iconSize: [40, 40],
+            }),
+          })
+          .bindPopup(
+            `
+                      <b>Data</b><br>
+                      N: ${data.n}<br>
+                      P: ${data.p}<br>
+                      K: ${data.k}<br>
+                      pH: ${data.ph}<br>
+                      Moisture: ${data.moisture}`
+          )
+          .addTo(map);
+        };
+        
+        tambahkanMarker(alat1);
+        tambahkanMarker(alat2);
+        tambahkanMarker(alat3);
+        </script> -->
+    <script src="/js/function/geoJSON_Padaasih.js"></script>
+    <script src="/js/function/map_ta.js"></script>
+    <script src="/js/function/date.js"></script>
+  </body>
+</html>

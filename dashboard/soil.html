@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="../assets/agridrone-logo.jpg" />
+    <title>Dashboard | Agri-Drone</title>
+    <link rel="stylesheet" href="../style/stmaufix.css" />
+    <link rel="stylesheet" href="../style/leaflet.css" />
+    <!-- Font Awesome Cdn Link -->
+    <script
+      src="https://kit.fontawesome.com/ff4f981f32.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <!-- <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  /> -->
+
+    <!-- Map -->
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <ul id="myList">
+          <li>
+            <a href="#" class="logo">
+              <img src="../assets/agridrone-logo.jpg" alt="" />
+              <span class="nav-item">DashBoard</span>
+            </a>
+          </li>
+          <li>
+            <a href="../dashboard/soil.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-leaf"></i>
+              <span class="nav-item">Soil</span>
+            </a>
+          </li>
+          <li>
+            <a href="../dashboard/weather.html" onclick="toggleActiveClass(this)">
+              <i class="fas fa-solid fa-cloud-sun"></i>
+              <span class="nav-item">Weather</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="" onclick="toggleActiveClass(this)">
+              <i class="fas fa-users"></i>
+              <span class="nav-item">History</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="main">
+        <div class="main-top">
+          <h1>Today Overviews</h1>
+          <i class="fas fa-calendar-days"
+            ><h3 class="date" id="date">dd/mm/yyyy</h3></i
+          >
+        </div>
+        <section class="main-course">
+          <div class="course-box">
+            <!-- <ul id="infoList"> -->
+              <!-- <li id="windDirection" onclick="showInfo('windDirection')">Wind Direction</li> -->
+              <!-- <li id="soil1" onclick="showInfo('soil1')">Soil Test 1</li> -->
+              <!-- <li id="soil2" onclick="showInfo('soil2')">Soil Test 2</li> -->
+              <!-- <li id="soil3" onclick="showInfo('soil3')">Soil Test 3</li> -->
+              <!-- <li id="soil4" onclick="showInfo('soil4')">Soil Test 3</li> -->
+              <!-- <li id="all" onclick="showInfo('all')">All Node</li> -->
+            <!-- </ul> -->
+           <div id="TampilSoil"></div>
+            <div class="position">
+              <div class="box">
+                <h3>Position</h3>
+                <div class="box_cordinate">
+                  <div class="latitude">
+                    <h4><i class="fa-solid fa-location-dot"></i> Latitude</h4>
+                    <p class="cordinate_value" id="coordinateLat">__</p>
+                  </div>
+                  <div class="longitude">
+                    <h4><i class="fa-solid fa-location-dot"></i> Longitude</h4>
+                    <p class="cordinate_value" id="coordinateLong">__</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="box" style="width: 950px">
+                  <h3>Fertility Mapping Results</h3>
+                  <div class="mapbox">
+                    <div class="mapsize" id="map"></div>
+                    <button onclick="movemap()">View Map</button>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="course">
+              <div class="box_left" id="infoBox">
+                <div class="box_data">
+                  <div class="info">
+                    <div class="popup" onclick="myFunction(event)">Moisture
+                      <span class="popuptext" id="myPopup">Poor : <20% <br>
+                      Moderate: 20% - 60% <br>
+                      Good: 61% - 80% </span>
+                    </div>
+                    <p>
+                      <span id="infoMoisture">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <div class="popup" onclick="myFunction(event)">pH
+                      <span class="popuptext" id="myPopup">Poor : <6 <br>
+                      Moderate: 6 - 7.5 <br>
+                      Good: >7.5 </span>
+                    </div>
+                    <p>
+                      <span id="infopH">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <div class="popup" onclick="myFunction(event)">Nitrogen
+                      <span class="popuptext" id="myPopup">Poor : <150 <br>
+                      Moderate: 150 - 200 <br>
+                      Good: 200 - 250 </span>
+                    </div>
+                    <p>
+                      <span id="infoN">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <div class="popup" onclick="myFunction(event)">Phosphorous
+                      <span class="popuptext" id="myPopup">Poor : 160 - 200<br>
+                      Moderate: 210 - 350<br>
+                      Good: 351 - 500</span>
+                    </div>
+                    <p>
+                      <span id="infoP">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                </div>
+                <div class="box_data">
+                  <div class="info">
+                    <div class="popup" onclick="myFunction(event)">Potassium
+                      <span class="popuptext" id="myPopup">Poor : 200 - 250<br>
+                      Moderate: 251 - 400<br>
+                      Good: 401 - 600</span>
+                    </div>
+                    <p>
+                      <span id="infoK">__</span>
+                    </p>
+                    <i class="emoji-berubah"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="fertily-info">
+                <div class="box">
+                  <h3>Fertility</h3>
+                  <div class="box_info_map">
+                    <div class="emoji_red">
+                      <i class="fa-solid fa-circle"></i>
+                      <p>This area have Poor Fertility</p>
+                    </div>
+                    <div class="emoji_green">
+                      <i class="fa-solid fa-circle"></i>
+                      <p>This area have Good Fertility</p>
+                    </div>
+                    <div class="emoji_yellow">
+                      <i class="fa-solid fa-circle"></i>
+                      <p>This area have Moderate Fertility</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+    <script src="../js/stmaufix.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="../js/function/geoJSON_Padaasih.js"></script>
+    <script src="../js/function/map.js"></script>
+    <script src="../js/function/clock.js"></script>
+    <script src="../js/function/date.js"></script>
+    <script src="../js/function/day.js"></script>
+    <script src="../js/function/emoji.js"></script>
+  </body>
+</html>

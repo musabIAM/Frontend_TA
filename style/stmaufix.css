@@ -1,0 +1,620 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #e1ede7;
+}
+.container {
+  display: flex;
+}
+nav {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  background: #fff;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  color: rgb(85, 83, 83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+  transition: .3s ;
+}
+nav .fas {
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item {
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover:not(.active) {
+  background: #eee;
+  font-weight: bold;
+}
+.active{
+  font-weight: bold;
+}
+.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+/* Main Section */
+.main {
+  position: relative;
+  padding: 20px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+.main-top {
+  display: flex;
+  width: 100%;
+}
+.main-top i {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main-top .date {
+  margin-left: 5px;
+  font-size: 12px;
+}
+.main-weather {
+  display: flex;
+  margin-top: 20px;
+}
+
+.main-weather .card_left {
+  display: contents;
+}
+
+.main-weather .card_right {
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+}
+
+/* card-left detail */
+.main-weather .card_detail {
+  display: grid;
+  justify-items: stretch;
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  align-content: space-between;
+}
+.main-weather .card_detail .content_data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.main-weather .card_detail .info_data {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main-weather .card_detail .info_data h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.main-weather .card_detail .info_data p {
+  font-size: 14px;
+}
+
+.main-weather .card_detail .info_time i {
+  font-size: 70px;
+}
+
+.main-weather .card_detail button {
+  background: rgb(70, 144, 187);
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.main-weather .card_detail button:hover {
+  background: rgb(28, 68, 129);
+}
+.main-weather .card_detail i {
+  font-size: 22px;
+  padding: 10px;
+}
+
+/* card-right detail */
+.main-weather .card {
+  display: flex;
+  width: 25%;
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  align-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-weather .card .content_data {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  align-items: center;
+}
+
+.main-weather .card .info_data {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main-weather .card .info_data h3 {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.main-weather .card .info_time i {
+  font-size: 50px;
+}
+
+.main-weather .card button {
+  background: rgb(70, 144, 187);
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.main-weather .card button:hover {
+  background: rgb(28, 68, 129);
+}
+.main-weather .card i {
+  font-size: 22px;
+}
+
+/* Courses */
+.main-course {
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+.course-box {
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.course-box ul {
+  list-style: none;
+  display: flex;
+}
+.course-box ul li {
+  margin: 10px;
+  color: gray;
+  cursor: pointer;
+  transition: .3s;
+}
+.course-box ul li:hover{
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid #000;
+}
+.course-box ul .active {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.course-box .course {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.course {
+  display: flex;
+}
+
+.course .box_left {
+  display: contents;
+}
+
+.course .box_right {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+/* box-left */
+.box_data {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #e1ede7;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box_data .info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box_data .info p i {
+  font-size: 14px;
+  color: #000;
+}
+
+.box_data p {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100px;
+  background: #fff;
+  border-radius: 15px;
+}
+.box_data button {
+  background: #7F9F80;
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.box_data button:hover {
+  background: #A8CD9F;
+}
+.box_data .info i {
+  margin-top: 25px;
+  font-size: 45px;
+  color: #337357;
+}
+
+/* box-right */
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #e1ede7;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  /* width: 430px; */
+}
+.box p {
+  font-size: 12px;
+}
+.box button {
+  background: rgb(255, 255, 255);
+  color: #000000;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: bold;
+}
+.box button:hover {
+  background: #16563b;
+  color: white;
+  font-weight: bold;
+}
+.box i {
+  font-size: 15px;
+}
+
+.box .chart-wrapper{
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box h3{
+  display: flex;
+  justify-content: center;
+}
+
+.box .box_emoji{
+  display: flex;
+  flex-direction: column;
+}
+
+/* box position */
+.position {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 350px;
+
+}
+
+.position .box .posisi h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.box_cordinate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* This will space the boxes evenly */
+  width: 100%;
+  /* margin-bottom: -25px; */
+}
+
+.latitude,
+.longitude {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: calc(
+    50% - 5px
+  ); /* Adjust the width to be half of the parent minus the gap */
+  height: 120px;
+  width: 180px;
+  background: #fff;
+  border-radius: 30px;
+  margin-bottom: 100px;
+  margin: 5px; /* This adds some space between the two boxes */
+}
+
+.latitude p,
+.longitude p {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* end box */
+.emoji_smile,
+.emoji_sad,
+.emoji_mad{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px;
+  width: 300px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+.emoji_smile i,
+.emoji_mad i,
+.emoji_sad i{
+  font-size: 30px;
+}
+
+.emoji_smile i{
+  color: #337357;
+}
+
+.emoji_mad i{
+  color: #D24545;
+}
+
+.emoji_sad i{
+  color: #c2a346;
+}
+
+.emoji_smile p,
+.emoji_mad p,
+.emoji_sad p{
+  margin-left: 12px;
+}
+
+.emoji_smile p span,
+.emoji_mad p span,
+.emoji_sad p span{
+ font-weight: bold;
+}
+
+/* map */
+.box .mapbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: calc(
+    50% - 5px
+  ); /* Adjust the width to be half of the parent minus the gap */
+  height: 270px;
+  width: 920px;
+  background: #fff;
+  border-radius: 30px;
+  margin-bottom: 100px;
+  margin: 5px;
+}
+.box .mapbox .mapsize {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+
+}
+.custom-icon {
+  background-color: green;
+  border-radius: 50%;
+}
+.custom-icon.red {
+  background-color: red;
+  border-radius: 50%;
+}
+.custom-icon.yellow {
+  background-color: yellow;
+  border-radius: 50%;
+}
+.emoji_red,
+.emoji_green,
+.emoji_yellow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 5px;
+  width: 220px;
+  background: #fff;
+  border-radius: 15px;
+}
+
+.emoji_red i,
+.emoji_green i,
+.emoji_yellow i{
+  font-size: 30px;
+}
+
+.emoji_green i{
+  color: green;
+}
+
+.emoji_red i{
+  color: red;
+}
+
+.emoji_yellow i{
+  color: yellow;
+}
+
+.emoji_red p,
+.emoji_green p,
+.emoji_yellow p{
+  margin-left: 5px;
+  font-size: 10px;
+}
+
+.emoji_red p span,
+.emoji_green p span,
+.emoji_yellow p span{
+ font-weight: bold;
+}
+
+/* pop up */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 170px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 1%;
+  left: 50%;
+  margin-left: -80px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}

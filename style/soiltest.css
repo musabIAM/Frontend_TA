@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #e1ede7;
+}
+.container {
+  display: flex;
+}
+nav {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: auto;
+  left: 0;
+  background: #fff;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  text-align: center;
+  display: flex;
+  margin: 10px 0 0 10px;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span {
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+a {
+  position: relative;
+  color: rgb(85, 83, 83);
+  font-size: 14px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+nav .fas {
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item {
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover:not(.active) {
+  background: #eee;
+  font-weight: bold;
+}
+.active {
+  background: #eee;
+  font-weight: bold;
+}
+.logout {
+  position: absolute;
+  bottom: 0;
+}
+
+/* Courses */
+.main-course {
+  margin-top: 20px;
+  text-transform: capitalize;
+}
+.main-course h1 {
+  margin-left: 30px;
+}
+.main-course i {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  position: absolute;
+  right: 0;
+  margin: -30px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+.main-course .date {
+  margin-left: 10px;
+  font-size: 12px;
+}
+.course-box {
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 30px 10px;
+  margin-top: 10px;
+  margin-left: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.course-box ul {
+  list-style: none;
+  display: flex;
+}
+.course-box ul li {
+  margin: 10px;
+  color: gray;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.course-box ul li:hover {
+  color: rgb(0, 0, 0);
+  border-bottom: 1px solid #000;
+}
+.course-box ul .active {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+.course-box .course {
+  display: flex;
+}
+
+.course .box_left {
+  display: contents;
+}
+
+.course .box_left {
+  display: contents;
+}
+
+.course .box_right {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+/* posisi */
+.position {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  padding-left: 10px;
+}
+
+.position .box_posisi .posisi h3 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.box_posisi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 25px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #e1ede7;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box_koordinat {
+  display: flex;
+  justify-content: space-around; /* This will space the boxes evenly */
+  width: 100%;
+}
+
+.latitude,
+.longitude {
+  display: flex;
+  justify-content: center;
+  width: calc(
+    50% - 5px
+  ); /* Adjust the width to be half of the parent minus the gap */
+  height: 130px;
+  width: 150px;
+  background: #fff;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  margin: 5px; /* This adds some space between the two boxes */
+}
+
+.latitude p,
+.longitude p {
+  font-size: 15px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* box-left */
+.box_data {
+  width: 185px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+  background: #e1ede7;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box_data .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box_data .info p i {
+  font-size: 14px;
+  color: #000;
+}
+.box_data p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.box_data button {
+  background: rgb(89, 126, 100);
+  color: #fff;
+  padding: 7px 10px;
+  border-radius: 10px;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.box_data button:hover {
+  background: rgb(49, 83, 74);
+}
+.box_data .info i {
+  margin-top: 50px;
+  font-size: 45px;
+  color: #e1ede7;
+}
+
+.box_data .info h3 {
+  padding-top: 20px;
+}
+
+/* emoji */
+.box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: stretch;
+  margin-bottom: 50px;
+  margin-left: 30px;
+  margin-top: 50px;
+  border-radius: 10px;
+  background: #e1ede7;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.box h3 {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.box h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.box .box_emoji {
+  display: flex;
+  flex-direction: column;
+}
+
+.emoji_smile,
+.emoji_sad,
+.emoji_mad {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end; /* Change this to flex-end to move content to the right */
+  margin: 5px;
+  height: 40px;
+  width: 300px;
+  background: #fff;
+  border-radius: 15px;
+  padding-right: 100px; /* Add padding to keep content from touching the edge */
+}
+
+.box_emoji .emoji_smile i,
+.emoji_mad i,
+.emoji_sad i {
+  font-size: 30px;
+  margin-left: auto;
+}
+
+.emoji_smile i {
+  color: #337357;
+}
+
+.emoji_mad i {
+  color: #d24545;
+}
+
+.emoji_sad i {
+  color: #c2a346;
+}
+
+.emoji_smile p,
+.emoji_mad p,
+.emoji_sad p {
+  margin-left: 12px;
+}
+
+.emoji_smile p span,
+.emoji_mad p span,
+.emoji_sad p span {
+  font-weight: bold;
+}
+
+/* Base styles are already provided by your CSS above */
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  /* for tablets and smaller laptops */
+  /* Adjust nav width for side menu if necessary */
+  nav {
+    width: 100%; /* Full width */
+  }
+
+  .container,
+  .course-box .course,
+  .box_posisi,
+  .box_koordinat {
+    flex-direction: column; /* Stack children vertically */
+  }
+
+  /* Make sure the emoji container takes full width to align emoji to the right */
+  .box_emoji .emoji_smile,
+  .box_emoji .emoji_mad,
+  .box_emoji .emoji_sad {
+    width: 100%; /* Take full width */
+    justify-content: flex-end; /* Align emoji to the right */
+    padding-right: 16px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 768px) {
+  /* for smaller tablets */
+  /* You may want to adjust font sizes here */
+  .box_data,
+  .box {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .box_emoji .emoji_smile,
+  .box_emoji .emoji_mad,
+  .box_emoji .emoji_sad {
+    padding-right: 12px; /* Adjust padding */
+  }
+}
+
+@media (max-width: 480px) {
+  /* for mobile phones */
+  /* Stack items vertically and adjust padding/margins as necessary */
+  nav,
+  .course-box,
+  .box_data,
+  .box {
+    width: 100%; /* Full width */
+    margin: 10px 0; /* Adjust vertical margin only */
+  }
+
+  /* For emoji containers, ensure they stretch and emoji stay right-aligned */
+  .box_emoji .emoji_smile,
+  .box_emoji .emoji_mad,
+  .box_emoji .emoji_sad {
+    width: 100%; /* Take full width */
+    justify-content: flex-end; /* Align emoji to the right */
+    padding-right: 8px; /* Less padding on smaller screens */
+  }
+}
